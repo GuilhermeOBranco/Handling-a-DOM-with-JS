@@ -32,6 +32,13 @@ function adicionaCampos() {
         var inputRadioSobra = document.createElement('input');
         var inputRadioFalta = document.createElement('input');
         var inputRadioZerado = document.createElement('input');
+        var lSobra = document.createElement('label');
+        var lFalta = document.createElement('label');
+        var lZerado = document.createElement('label');
+
+        lSobra.innerText = "Sobra";
+        lFalta.innerText = "Falta";
+        lZerado.innerText = "Zerado";
 
         inputDiderenca.id = i;
         inputDiderenca.name = "diferenca" + i;
@@ -70,10 +77,14 @@ function adicionaCampos() {
 
         divAtual.appendChild(input);
 
+        divAtual.appendChild(lSobra);
         divAtual.appendChild(inputRadioSobra);
+        divAtual.appendChild(lFalta);
         divAtual.appendChild(inputRadioFalta);
+        divAtual.appendChild(lZerado);
         divAtual.appendChild(inputRadioZerado);
         divAtual.appendChild(inputDiderenca);
+        
     }
 
 }
