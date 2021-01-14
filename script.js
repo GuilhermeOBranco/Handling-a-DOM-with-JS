@@ -77,6 +77,7 @@ function adicionaCampos() {
         input.id = i;
         input.className = "form-control mt-3";
         input.placeholder = i;
+        input.type = "number"
 
         divAtual.appendChild(input);
 
@@ -225,76 +226,9 @@ function validaRadio() {
                 case 61:
                     inputHidden[20].type = "visible";
                     break;
-
-                case 2:
-                    inputHidden[0].type = "hidden";
-                    break;
-                case 5:
-                    inputHidden[1].type = "hidden";
-                    break;
-                case 8:
-                    inputHidden[2].type = "hidden";
-                    break;
-                case 11:
-                    inputHidden[3].type = "hidden";
-                    break;
-                case 14:
-                    inputHidden[4].type = "hidden";
-                    break;
-                case 17:
-                    inputHidden[5].type = "hidden";
-                    break;
-                case 20:
-                    inputHidden[6].type = "hidden";
-                    break;
-                case 23:
-                    inputHidden[7].type = "hidden";
-                    break;
-                case 26:
-                    inputHidden[8].type = "hidden";
-                    break;
-                case 29:
-                    inputHidden[9].type = "hidden";
-                    break;
-                case 32:
-                    inputHidden[10].type = "hidden";
-                    break;
-                case 35:
-                    inputHidden[11].type = "hidden";
-                    break;
-                case 38:
-                    inputHidden[12].type = "hidden";
-                    break;
-                case 41:
-                    inputHidden[13].type = "hidden";
-                    break;
-                case 44:
-                    inputHidden[14].type = "hidden";
-                    break;
-                case 47:
-                    inputHidden[15].type = "hidden";
-                    break;
-                case 50:
-                    inputHidden[16].type = "hidden";
-                    break;
-                case 53:
-                    inputHidden[17].type = "hidden";
-                    break;
-                case 56:
-                    inputHidden[18].type = "hidden";
-                    break;
-                case 59:
-                    inputHidden[19].type = "hidden";
-                    break;
-                case 62:
-                    inputHidden[20].type = "hidden";
-                    break;
             }
 
         }
-
-
-
     }
 }
 
@@ -348,6 +282,33 @@ function validarCampos() {
         }
     }
     for (var i = 0; i < opcao.length; i++) {
+        switch (i) {
+            case 2:
+                diferenca[0].value = 0;
+                break;
+            case 5:
+                diferenca[1].value = 0;
+                break;
+            case 8: diferenca[2].value = 0;break;
+            case 11: diferenca[3].value = 0;break;
+            case 14: diferenca[4].value = 0;break;
+            case 17: diferenca[5].value = 0;break;
+            case 20: diferenca[6].value = 0;break;
+            case 23: diferenca[7].value = 0;break;
+            case 26: diferenca[8].value = 0;break;
+            case 29: diferenca[9].value = 0;break;
+            case 32: diferenca[10].value = 0;break;
+            case 35: diferenca[11].value = 0;break;
+            case 38: diferenca[12].value = 0;break;
+            case 41: diferenca[13].value = 0;break;
+            case 44: diferenca[14].value = 0;break;
+            case 47: diferenca[15].value = 0;break;
+            case 50: diferenca[16].value = 0;break;
+            case 53: diferenca[17].value = 0;break;
+            case 56: diferenca[18].value = 0;break;
+            case 59: diferenca[19].value = 0;break;
+
+        }
         if (opcao[i].value == "") {
             alert("Campo vazio, favor preencher todos os campos");
             return false;
