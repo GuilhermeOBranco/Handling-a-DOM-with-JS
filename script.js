@@ -295,8 +295,19 @@ function validaRadio() {
     }
 }
 
+function GetCampos()
+{
+    /*
+    ///
+        Adicionando a leitura e a recuperação dos campos
+    ///
+    */
 
+    var validacaoCei = new Object();
+    validacaoCei.Ceino;
+    validacaoCei.calc;
+    validacaoCei.valor;
 
+    var 
 
-
-
+}
