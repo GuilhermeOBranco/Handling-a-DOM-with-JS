@@ -304,32 +304,60 @@ function GetCampos() {
         Adicionando a leitura e a recuperação dos campos
     ///
     */
+    if (validarCampos()) {
 
+        var ceis = document.getElementsByName("inputOption");
+        var opcao = document.getElementsByClassName("inputRadio");
+        var diferenca = document.getElementsByClassName("diferenca");
+
+        var validacaoCei = new Object();
+        validacaoCei.Ceino;
+        validacaoCei.calc;
+        validacaoCei.valor;
+        var posicaoLista = 0;
+
+        lista = [];
+
+        for (var i = 0; i < ceis.length; i++) {
+            lista[posicaoLista] = ceis[i].value;
+            posicaoLista += 1;
+        }
+        for (var i = 0; i < opcao.length; i++) {
+            if (opcao[i].checked) {
+                lista[posicaoLista] = opcao[i].value;
+                posicaoLista += 1;
+            }
+        }
+        for (var i = 0; i < diferenca.length; i++) {
+            lista[posicaoLista] = diferenca[i].value;
+            posicaoLista += 1;
+        }
+        console.log(lista);
+    }
+}
+
+function validarCampos() {
     var ceis = document.getElementsByName("inputOption");
     var opcao = document.getElementsByClassName("inputRadio");
     var diferenca = document.getElementsByClassName("diferenca");
 
-    var validacaoCei = new Object();
-    validacaoCei.Ceino;
-    validacaoCei.calc;
-    validacaoCei.valor;
-    var posicaoLista = 0;
-
-    lista = [];
-
     for (var i = 0; i < ceis.length; i++) {
-        lista[posicaoLista] = ceis[i].value;
-        posicaoLista += 1;
+        if (ceis[i].value == "") {
+            alert("Campo vazio, favor preencher todos os campos");
+            return false;
+        }
     }
     for (var i = 0; i < opcao.length; i++) {
-        if (opcao[i].checked) {
-            lista[posicaoLista] = opcao[i].value;
-            posicaoLista += 1;
+        if (opcao[i].value == "") {
+            alert("Campo vazio, favor preencher todos os campos");
+            return false;
         }
     }
     for (var i = 0; i < diferenca.length; i++) {
-        lista[posicaoLista] = diferenca[i].value;
-        posicaoLista += 1;
+        if (diferenca[i].value == "") {
+            alert("Campo vazio, favor preencher todos os campos");
+            return false;
+        }
     }
-    console.log(lista);
+    return true;
 }
