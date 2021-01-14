@@ -16,12 +16,15 @@ function adicionaCampos() {
     var select = document.getElementById("selectOption");
     var index = select.selectedIndex;
     var divAtual = document.getElementById("inputs");
-
     var elementos = document.getElementsByTagName("input");
+    var elementoInput = document.getElementsByTagName("label");
 
     if (elementos.length > 0) {
         for (var i = elementos.length - 1; i >= 0; --i) {
             elementos[i].remove();
+        }
+        for (var i = elementoInput.length - 1; i >= 0; --i) {
+            elementoInput[i].remove();
         }
     }
 
@@ -84,7 +87,7 @@ function adicionaCampos() {
         divAtual.appendChild(lZerado);
         divAtual.appendChild(inputRadioZerado);
         divAtual.appendChild(inputDiderenca);
-        
+
     }
 
 }
@@ -295,19 +298,38 @@ function validaRadio() {
     }
 }
 
-function GetCampos()
-{
+function GetCampos() {
     /*
     ///
         Adicionando a leitura e a recuperação dos campos
     ///
     */
 
+    var ceis = document.getElementsByName("inputOption");
+    var opcao = document.getElementsByClassName("inputRadio");
+    var diferenca = document.getElementsByClassName("diferenca");
+
     var validacaoCei = new Object();
     validacaoCei.Ceino;
     validacaoCei.calc;
     validacaoCei.valor;
+    var posicaoLista = 0;
 
-    var 
+    lista = [];
 
+    for (var i = 0; i < ceis.length; i++) {
+        lista[posicaoLista] = ceis[i].value;
+        posicaoLista += 1;
+    }
+    for (var i = 0; i < opcao.length; i++) {
+        if (opcao[i].checked) {
+            lista[posicaoLista] = opcao[i].value;
+            posicaoLista += 1;
+        }
+    }
+    for (var i = 0; i < diferenca.length; i++) {
+        lista[posicaoLista] = diferenca[i].value;
+        posicaoLista += 1;
+    }
+    console.log(lista);
 }
